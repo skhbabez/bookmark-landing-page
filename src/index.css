@@ -107,4 +107,8 @@
     src: local("Rubik"),
       url("/fonts/Rubik-Italic-VariableFont_wght.ttf") format("truetype");
   }
+
+  body {
+    @apply font-display;
+  }
 }
