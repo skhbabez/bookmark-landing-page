@@ -21,7 +21,6 @@ const Newsletter = () => {
       setError(true);
     } else {
       setError(false);
-      console.log(result.data);
     }
   };
   const handleBlur = () => {
@@ -31,7 +30,6 @@ const Newsletter = () => {
       setError(true);
     } else {
       setError(false);
-      console.log(result.data);
     }
   };
   return (
