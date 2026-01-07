@@ -32,7 +32,14 @@ Users should be able to:
 
 ## My process
 
-### Form
+### Built with
+
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+
+### What I learned
+
+#### Form
 
 I wanted to try out a validation library for a change. I used zod, i library i worked with in the past a little bit. This made the email validation quite trivial.
 Though, I realized, that I need to brush up on my form knowledge a little and will dive back into the web dev guide on it. I will also explore libraries like react hook form next.
@@ -50,12 +57,17 @@ const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 };
 ```
 
-### Built with
+#### Faq
 
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
+U built the faq section with details summary, to avoid using javascript. The only downside was, to replace the markers. usually I would do it with css and :after but this time I used icons from react-icons directly. This was effectively easier.
 
-### What I learned
+```tsx
+      <FaAngleUp size={18} className="hidden group-open:inline text-red-400" />
+      <FaAngleDown
+        size={18}
+        className="inline group-open:hidden text-blue-600"
+      />
+```
 
 ### Continued development
 

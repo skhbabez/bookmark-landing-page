@@ -7,6 +7,7 @@ import {
 import Button from "../../Components/Button/Button";
 import clsx from "clsx";
 import z from "zod";
+import { FaCircleExclamation } from "react-icons/fa6";
 
 const Email = z.object({
   email: z.email(),
@@ -70,17 +71,26 @@ const Newsletter = ({
             <label htmlFor={emailId}>
               <span className="sr-only">email</span>
             </label>
-            <input
-              value={email}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={clsx(
-                "outline-none w-full h-12 px-4 md:px-6 bg-white text-blue-950/25 text-2-mobile-regular md:text-6-regular rounded-[0.3125rem]",
-                isError && "border-2 border-red-400 px-3.5 md:px-5.5 "
-              )}
-              id={emailId}
-              placeholder="enter your email adress"
-            />
+            <div className="relative">
+              <input
+                value={email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={clsx(
+                  "outline-none w-full h-12 px-4 md:px-6 bg-white text-blue-950/25 text-2-mobile-regular md:text-6-regular rounded-[0.3125rem] pe-14",
+                  isError && "border-2 border-red-400 px-3.5 md:px-5.5 "
+                )}
+                id={emailId}
+                placeholder="enter your email adress"
+              />
+              <FaCircleExclamation
+                size={20}
+                className={clsx(
+                  "text-red-400 absolute right-4 top-1/2 -translate-y-1/2 hidden",
+                  isError && "inline"
+                )}
+              />
+            </div>
             <span
               className="block text-7 italic text-white ms-3.5 pb-1.5 pt-1"
               aria-live="polite"
