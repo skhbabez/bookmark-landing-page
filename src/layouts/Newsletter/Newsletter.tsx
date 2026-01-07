@@ -1,4 +1,9 @@
-import { useId, useState, type ChangeEvent } from "react";
+import {
+  useId,
+  useState,
+  type ChangeEvent,
+  type ComponentPropsWithRef,
+} from "react";
 import Button from "../../Components/Button/Button";
 import clsx from "clsx";
 import z from "zod";
@@ -7,7 +12,10 @@ const Email = z.object({
   email: z.email(),
 });
 
-const Newsletter = () => {
+const Newsletter = ({
+  className,
+  ...props
+}: Omit<ComponentPropsWithRef<"div">, "children">) => {
   const emailId = useId();
   const formId = useId();
   const [isError, setError] = useState(false);
@@ -33,7 +41,10 @@ const Newsletter = () => {
     }
   };
   return (
-    <div className="bg-blue-600 pt-12.25 px-8 min-h-90">
+    <div
+      className={clsx("bg-blue-600 pt-12.25 px-8 min-h-90", className)}
+      {...props}
+    >
       <form
         className="mx-auto max-w-110.5"
         aria-labelledby={formId}
