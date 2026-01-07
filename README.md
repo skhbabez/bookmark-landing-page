@@ -35,7 +35,7 @@ Users should be able to:
 ### Form
 
 I wanted to try out a validation library for a change. I used zod, i library i worked with in the past a little bit. This made the email validation quite trivial.
-Though, I realized, that i need t brush up on my form knowledge a little and will dive back into the web dev guide on it.
+Though, I realized, that I need to brush up on my form knowledge a little and will dive back into the web dev guide on it. I will also explore libraries like react hook form next.
 
 ```tsx
 const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
