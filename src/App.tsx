@@ -8,7 +8,7 @@ function App() {
     <>
       <main className="px-8 md:px-20 xl:px-0">
         <Downloads className="mx-auto" />
-        <Faq className="mx-auto" />
+        <Faq className="mx-auto mt-32 md:mt-35.5 xl:mt-40.25" />
         <Newsletter className="w-full mt-32 md:mt-37.25 xl:mt-44.25" />
       </main>
       <Footer />

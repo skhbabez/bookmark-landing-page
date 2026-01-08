@@ -29,11 +29,15 @@ const Downloads = ({
         We’ve got more browsers in the pipeline. Please do let us know if you’ve
         got a favourite you’d like us to prioritize.
       </p>
-      <ul className="mt-10 md:mt-16 xl:mt-12 flex flex-col items-center md:flex-row gap-10 md:gap-2 xl:[&>*:nth-child(1)]:mb-20 xl:[&>*:nth-child(2)]:mb-10">
+      <ul className="mt-10 md:mt-16 xl:mt-12 flex flex-col items-center xl:items-start md:flex-row gap-10 md:gap-2 xl:[&>*:nth-child(3)]:mt-20 xl:[&>*:nth-child(2)]:mt-10">
         {cards.map(({ browser, version, icon }) => (
           <li key={browser} className="py-8 max-w-70 overflow-hidden space-y-6">
             <div className="space-y-8">
-              <img className="mx-auto" src={icon} alt="" />
+              <img
+                className="mx-auto h-25 md:h-[71.16px] xl:h-25"
+                src={icon}
+                alt=""
+              />
               <hgroup className="space-y-2">
                 <h3 className="text-5-mobile md:text-3">Add to {browser}</h3>
                 <p className="text-2-mobile-regular md:text-4 text-blue-950/50">
