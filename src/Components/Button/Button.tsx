@@ -13,7 +13,7 @@ const Button = ({
   return (
     <button
       className={clsx(
-        "h-12 shadow-button outline-none text-2-mobile-medium md:text-6-medium rounded-[0.3125rem] px-2 border-2 hover:bg-white focus-visible:bg-white cursor-pointer transition-colors duration-200 delay-75 ease-in-out",
+        "min-h-12 shadow-button outline-none text-2-mobile-medium md:text-6-medium rounded-[0.3125rem] px-2 border-2 hover:bg-white focus-visible:bg-white cursor-pointer transition-colors duration-200 delay-75 ease-in-out",
         className,
         variant === "primary" &&
           "bg-blue-600 text-white border-blue-600 hover:text-blue-600 focus-visible:text-blue-600",
