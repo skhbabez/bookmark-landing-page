@@ -46,7 +46,14 @@ const TabList = ({
   ...props
 }: ComponentPropsWithRef<"div">) => {
   return (
-    <div role="tablist" className={clsx("", className)} {...props}>
+    <div
+      role="tablist"
+      className={clsx(
+        "flex flex-col gap-px md:gap-0 md:pt-0 bg-[#495DCF]/20 py-px md:flex-row",
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   );
@@ -66,11 +73,21 @@ const Tab = ({ value, className, children, ...props }: TabProps) => {
       role="tab"
       aria-selected={activeValue === value}
       aria-controls={`tabpanel-${valueId}`}
-      className={clsx("", className)}
+      className={clsx(
+        "md:flex-1 relative block text-2-mobile-regular md:text-5-regular py-4 bg-white md:pt-0 md:pb-6",
+        activeValue === value ? "text-blue-950" : "text-blue-950/75",
+        className
+      )}
       onClick={() => setActiveValue(value)}
       {...props}
     >
       {children}
+      <div
+        className={clsx(
+          "h-1 w-[52.41%] md:w-full absolute bg-red-400 bottom-0 left-0 right-0 mx-auto",
+          activeValue === value ? "block" : "hidden"
+        )}
+      ></div>
     </button>
   );
 };
