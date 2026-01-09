@@ -23,7 +23,7 @@ const AccordionTrigger = ({
     <summary
       className={clsx(
         `text-2-mobile-regular md:text-4 text-blue-950 list-none flex items-center justify-between md:pe-6 cursor-pointer
-        hover:text-red-400 focus:text-red-400 focus-visible:text-red-400
+        hover:text-red-400
         transition-colors duration-200 ease-in-out
         focus-visible:outline-2 outline-blue-950 outline-offset-2 rounded-sm`,
         className
