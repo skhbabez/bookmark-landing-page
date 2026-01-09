@@ -3,7 +3,9 @@ import {
   createContext,
   useContext,
   useId,
+  useRef,
   useState,
+  type ComponentPropsWithoutRef,
   type ComponentPropsWithRef,
 } from "react";
 
@@ -11,16 +13,18 @@ interface TabContext {
   id: string;
   activeValue: string;
   setActiveValue: (value: string) => void;
+  onKeyDown: (event: React.KeyboardEvent) => void;
 }
 const defaultTabContext = {
   id: "",
   activeValue: "",
   setActiveValue: () => {},
+  onKeyDown: () => {},
 };
 
 const TabContext = createContext<TabContext>(defaultTabContext);
 
-interface TabsContextProps extends ComponentPropsWithRef<"div"> {
+interface TabsContextProps extends ComponentPropsWithoutRef<"div"> {
   defaultValue: string;
 }
 const Tabs = ({
@@ -31,9 +35,47 @@ const Tabs = ({
 }: TabsContextProps) => {
   const id = useId();
   const [activeValue, setActiveValue] = useState(defaultValue);
+  const tabRef = useRef<HTMLDivElement>(null);
+
+  const onKeyDown = (event: React.KeyboardEvent) => {
+    if (tabRef.current) {
+      const tabs: HTMLButtonElement[] = Array.from(
+        tabRef.current.querySelectorAll("[role=tab]")
+      );
+      const currentIdx = tabs.findIndex(
+        (tab) => document.activeElement === tab
+      );
+      const calcIndex = (offset: number) => {
+        return Math.max(Math.min(currentIdx + offset, tabs.length - 1), 0);
+      };
+
+      switch (event.key) {
+        case "ArrowLeft":
+          tabs[calcIndex(-1)].focus();
+          break;
+
+        case "ArrowRight":
+          tabs[calcIndex(1)].focus();
+
+          break;
+
+        case "Home":
+          tabs[0].focus();
+          break;
+
+        case "End":
+          tabs[tabs.length - 1].focus();
+
+          break;
+
+        default:
+          break;
+      }
+    }
+  };
   return (
-    <TabContext value={{ id, activeValue, setActiveValue }}>
-      <div className={clsx("", className)} {...props}>
+    <TabContext value={{ id, activeValue, setActiveValue, onKeyDown }}>
+      <div ref={tabRef} className={clsx("", className)} {...props}>
         {children}
       </div>
     </TabContext>
@@ -64,18 +106,22 @@ interface TabProps extends ComponentPropsWithRef<"button"> {
 }
 
 const Tab = ({ value, className, children, ...props }: TabProps) => {
-  const { id, activeValue, setActiveValue } = useContext(TabContext);
+  const { id, activeValue, setActiveValue, onKeyDown } = useContext(TabContext);
   const valueId = `${value}-${id}`;
+  const active = activeValue === value;
   return (
     <button
       type="button"
       id={`tab-${valueId}`}
       role="tab"
-      aria-selected={activeValue === value}
+      tabIndex={active ? 0 : -1}
+      data-value={value}
+      onKeyDown={onKeyDown}
+      aria-selected={active}
       aria-controls={`tabpanel-${valueId}`}
       className={clsx(
         "md:flex-1 relative block text-2-mobile-regular md:text-5-regular py-4 bg-white md:pt-0 md:pb-6",
-        activeValue === value ? "text-blue-950" : "text-blue-950/75",
+        active ? "text-blue-950" : "text-blue-950/75",
         className
       )}
       onClick={() => setActiveValue(value)}
@@ -85,7 +131,7 @@ const Tab = ({ value, className, children, ...props }: TabProps) => {
       <div
         className={clsx(
           "h-1 w-[52.41%] md:w-full absolute bg-red-400 bottom-0 left-0 right-0 mx-auto",
-          activeValue === value ? "block" : "hidden"
+          active ? "block" : "hidden"
         )}
       ></div>
     </button>
@@ -99,13 +145,13 @@ interface TabPanelProps extends ComponentPropsWithRef<"div"> {
 const TabPanel = ({ value, className, children, ...props }: TabPanelProps) => {
   const { id, activeValue } = useContext(TabContext);
   const valueId = `${value}-${id}`;
+  const active = activeValue === value;
   return (
     <div
       role="tabpanel"
       id={`tabpanel-${valueId}`}
-      tabIndex={0}
       aria-labelledby={`tab-${valueId}`}
-      className={clsx(activeValue === value || "hidden", "", className)}
+      className={clsx(active || "hidden", "", className)}
       {...props}
     >
       {children}
