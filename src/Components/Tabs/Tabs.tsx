@@ -91,7 +91,7 @@ const TabList = ({
     <div
       role="tablist"
       className={clsx(
-        "flex flex-col gap-px md:gap-0 md:pt-0 bg-[#495DCF]/20 py-px md:flex-row",
+        "flex flex-col gap-px md:gap-0 md:pt-0 bg-[#495DCF]/20 py-px md:flex-row md:max-w-182.5 md:justify-between mx-auto",
         className
       )}
       {...props}
