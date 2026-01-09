@@ -11,9 +11,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
-  render: () => (
-    <Tabs>
+  args: { defaultValue: "1" },
+  render: (args) => (
+    <Tabs {...args}>
       <TabList>
         <Tab value="1">test-1</Tab>
         <Tab value="2">test-2</Tab>
