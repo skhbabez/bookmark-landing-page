@@ -117,10 +117,11 @@ const Tab = ({ value, className, children, ...props }: TabProps) => {
       tabIndex={active ? 0 : -1}
       data-value={value}
       onKeyDown={onKeyDown}
+      onFocus={() => setActiveValue(value)}
       aria-selected={active}
       aria-controls={`tabpanel-${valueId}`}
       className={clsx(
-        "md:flex-1 relative block text-2-mobile-regular md:text-5-regular py-4 bg-white md:pt-0 md:pb-6",
+        "outline-none md:flex-1 relative block text-2-mobile-regular md:text-5-regular py-4 bg-white md:pt-0 md:pb-6",
         active ? "text-blue-950" : "text-blue-950/75",
         className
       )}
