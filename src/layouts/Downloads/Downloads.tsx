@@ -47,7 +47,10 @@ const Downloads = ({
             </div>
             <img src={dots} alt="" />
             <div className="px-6 md:max-xl:px-2.25">
-              <Button className="w-full md:px-0 md:max-xl:min-h-[34.16px]">
+              <Button
+                type="button"
+                className="w-full md:px-0 md:max-xl:min-h-[34.16px]"
+              >
                 Add & Install Extension
               </Button>
             </div>

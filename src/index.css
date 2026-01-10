@@ -118,3 +118,9 @@
     @apply font-display;
   }
 }
+
+@layer utilities {
+  .main-spacer {
+    @apply px-8 md:px-20 xl:px-0;
+  }
+}

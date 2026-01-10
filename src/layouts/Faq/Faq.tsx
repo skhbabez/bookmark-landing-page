@@ -67,7 +67,9 @@ const Faq = ({
         </Accordion>
         <Divider />
       </div>
-      <Button className="block mx-auto px-6">More Info</Button>
+      <Button type="button" className="block mx-auto px-6">
+        More Info
+      </Button>
     </section>
   );
 };
