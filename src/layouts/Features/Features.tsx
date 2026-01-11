@@ -53,8 +53,17 @@ const Features = ({
             className="flex flex-col gap-8 md:gap-16 xl:flex-row xl:gap-30 items-center"
             value={value}
           >
-            <div className="w-full">
-              <img src={src} alt="" />
+            <div className="relative h-70.5 md:h-119.5 xl:h-126.75 w-full xl:w-[48.95%]">
+              <div className="absolute bg-blue-600 rounded-r-full h-50.75 md:h-88 w-[82.13%] md:w-[83.72%] xl:w-full xl:right-16.25 -z-10 bottom-0"></div>
+              <img
+                src={src}
+                className={clsx(
+                  "absolute",
+                  value === "1" &&
+                    "top-11 md:top-10.75 xl:top-18.75 left-1/2 md:left-[58.203125%] xl:left-auto md:right-17.25 xl:right-0 -translate-x-1/2 xl:translate-0 w-77.75 md:w-134"
+                )}
+                alt=""
+              />
             </div>
             <div className="max-w-112.5 max-md:px-8 space-y-4 md:space-y-6 ">
               <h3 className="text-1-mobile md:text-2 max-md:px-14">{title}</h3>
