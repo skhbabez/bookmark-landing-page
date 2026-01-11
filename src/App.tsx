@@ -9,7 +9,7 @@ function App() {
     <>
       <main className="">
         <Features />
-        <Downloads className="mx-auto main-spacer" />
+        <Downloads className="mx-auto main-spacer mt-33.25 md:mt-[9.51rem] xl:mt-40.75" />
         <Faq className="mx-auto mt-32 md:mt-35.5 xl:mt-40.25 main-spacer" />
         <Newsletter className="w-full mt-32 md:mt-37.25 xl:mt-44.25" />
       </main>

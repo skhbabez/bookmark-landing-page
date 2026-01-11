@@ -32,7 +32,7 @@ const Features = ({
   ...props
 }: Omit<ComponentPropsWithRef<"section">, "children">) => {
   return (
-    <section className={clsx("text-center", className)} {...props}>
+    <section className={clsx("text-center max-md:px-8", className)} {...props}>
       <div className="max-w-135 space-y-4 mx-auto">
         <h2 className="text-1-mobile md:text-2">Features</h2>
         <p>
@@ -43,7 +43,7 @@ const Features = ({
       </div>
 
       <Tabs defaultValue="1">
-        <TabList className="px-8 md:px-20 xl:px-0 mt-8 md:mt-18">
+        <TabList className="px-8 md:mx-auto mt-8 md:mt-18">
           {tabContent.map(({ value, tab }) => (
             <Tab value={value}>{tab}</Tab>
           ))}
@@ -54,13 +54,22 @@ const Features = ({
             value={value}
           >
             <div className="relative h-70.5 md:h-119.5 xl:h-126.75 w-full xl:w-[48.95%]">
-              <div className="absolute bg-blue-600 rounded-r-full h-50.75 md:h-88 w-[82.13%] md:w-[83.72%] xl:w-full xl:right-16.25 -z-10 bottom-0"></div>
+              <div
+                className={clsx(
+                  "absolute bg-blue-600 rounded-r-full h-50.75 md:h-88 w-[82.13%] xl:w-full xl:right-16.25 -z-10 bottom-0",
+                  value === "1" ? "md:w-[83.72%]" : "md:w-[67.84%]"
+                )}
+              ></div>
               <img
                 src={src}
                 className={clsx(
                   "absolute",
                   value === "1" &&
-                    "top-11 md:top-10.75 xl:top-18.75 left-1/2 md:left-[58.203125%] xl:left-auto md:right-17.25 xl:right-0 -translate-x-1/2 xl:translate-0 w-77.75 md:w-134"
+                    "top-11 md:top-10.75 xl:top-18.75 left-1/2 md:left-[56.90%] xl:left-auto xl:right-0 -translate-x-1/2 xl:translate-0 h-50.25 md:h-86.5",
+                  value === "2" &&
+                    "top-7.75 md:top-16.75  xl:top-18 left-1/2 xl:left-auto xl:right-0 -translate-x-1/2 xl:translate-0 w-[16.969375rem] md:w-117",
+                  value === "3" &&
+                    "top-7.75 md:top-16.75 xl:top-18 left-1/2 md:left-[51.43%] xl:left-auto xl:right-5.25 -translate-x-1/2 xl:translate-0 h-55 md:h-95"
                 )}
                 alt=""
               />
