@@ -2,6 +2,7 @@ import clsx from "clsx";
 import {
   createContext,
   useContext,
+  useEffect,
   useId,
   useRef,
   useState,
@@ -39,6 +40,7 @@ const Tabs = ({
 
   const onKeyDown = (event: React.KeyboardEvent) => {
     if (tabRef.current) {
+      event.preventDefault();
       const tabs: HTMLButtonElement[] = Array.from(
         tabRef.current.querySelectorAll("[role=tab]")
       );
@@ -46,17 +48,39 @@ const Tabs = ({
         (tab) => document.activeElement === tab
       );
       const calcIndex = (offset: number) => {
-        return Math.max(Math.min(currentIdx + offset, tabs.length - 1), 0);
+        const newIndex = currentIdx + offset;
+        if (newIndex < 0) {
+          return tabs.length - 1;
+        }
+        if (newIndex >= tabs.length) {
+          return 0;
+        }
+        return newIndex;
       };
-
+      const media = window.matchMedia("(min-width: 768px)").matches;
       switch (event.key) {
         case "ArrowLeft":
-          tabs[calcIndex(-1)].focus();
+          if (media) {
+            tabs[calcIndex(-1)].focus();
+          }
           break;
 
         case "ArrowRight":
-          tabs[calcIndex(1)].focus();
+          if (media) {
+            tabs[calcIndex(1)].focus();
+          }
+          break;
 
+        case "ArrowUp":
+          if (!media) {
+            tabs[calcIndex(-1)].focus();
+          }
+          break;
+
+        case "ArrowDown":
+          if (!media) {
+            tabs[calcIndex(1)].focus();
+          }
           break;
 
         case "Home":
@@ -87,9 +111,26 @@ const TabList = ({
   children,
   ...props
 }: ComponentPropsWithRef<"div">) => {
+  const [isHorizontal, setIsHorizontal] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  );
+
+  useEffect(() => {
+    const handleChange = (event: MediaQueryListEvent) => {
+      setIsHorizontal(event.matches);
+    };
+    const query = window.matchMedia("(min-width: 768px)");
+    query.addEventListener("change", handleChange);
+
+    return () => {
+      query.removeEventListener("change", handleChange);
+    };
+  }, []);
+
   return (
     <div
       role="tablist"
+      aria-orientation={isHorizontal ? "horizontal" : "vertical"}
       className={clsx(
         "flex flex-col md:flex-row md:justify-between [&>[role=tab]+[role=tab]]:-mt-px",
         className
@@ -152,6 +193,7 @@ const TabPanel = ({ value, className, children, ...props }: TabPanelProps) => {
     <div
       role="tabpanel"
       id={`tabpanel-${valueId}`}
+      tabIndex={0}
       aria-labelledby={`tab-${valueId}`}
       className={clsx(
         active || "hidden",

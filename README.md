@@ -88,10 +88,31 @@ I tried building my own tab component according to WAI accessibility standards. 
 
       switch (event.key) {
         case "ArrowLeft":
-          tabs[calcIndex(-1)].focus();
+          if (media) {
+            tabs[calcIndex(-1)].focus();
+          }
           break;
       ...
 
+```
+
+For accessibility, I had to figure out how to react to the orientation change to set the aria-orientation attribute and switch to up/down arrow keys. I ended up using window.matchMedia, since React did not seem to provide a hook for listening to window size changes.
+
+```tsx
+const [isHorizontal, setIsHorizontal] = useState(
+  window.matchMedia("(min-width: 768px)").matches
+);
+useEffect(() => {
+  const handleChange = (event: MediaQueryListEvent) => {
+    setIsHorizontal(event.matches);
+  };
+  const query = window.matchMedia("(min-width: 768px)");
+  query.addEventListener("change", handleChange);
+
+  return () => {
+    query.removeEventListener("change", handleChange);
+  };
+}, []);
 ```
 
 ### Continued development
