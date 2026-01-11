@@ -35,7 +35,7 @@ const Features = ({
     <section className={clsx("text-center max-md:px-8", className)} {...props}>
       <div className="max-w-135 space-y-4 mx-auto">
         <h2 className="text-1-mobile md:text-2">Features</h2>
-        <p>
+        <p className="text-blue-950/50 text-2-mobile-regular md:text-4">
           Our aim is to make it quick and easy for you to access your favourite
           websites. Your bookmarks sync between your devices so you can access
           them on the go.
@@ -74,7 +74,7 @@ const Features = ({
                 alt=""
               />
             </div>
-            <div className="max-w-112.5 max-md:px-8 space-y-4 md:space-y-6 ">
+            <div className="max-w-112.5 max-md:px-8 space-y-4 md:space-y-6 xl:text-start ">
               <h3 className="text-1-mobile md:text-2 max-md:px-14">{title}</h3>
               <p className="text-2-mobile-regular md:text-4 text-blue-950/50">
                 {text}

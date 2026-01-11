@@ -121,7 +121,7 @@ const Tab = ({ value, className, children, ...props }: TabProps) => {
       aria-selected={active}
       aria-controls={`tabpanel-${valueId}`}
       className={clsx(
-        "outline-none md:flex-1 relative block text-2-mobile-regular md:text-5-regular py-4 bg-white md:pt-0 md:pb-6",
+        "outline-none md:flex-1 relative block text-2-mobile-regular md:text-5-regular py-4 md:pt-0 md:pb-6",
         "max-md:border-y md:border-b border-[#495DCF]/20 ",
         active ? "text-blue-950" : "text-blue-950/75",
         className
