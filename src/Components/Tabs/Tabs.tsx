@@ -153,7 +153,12 @@ const TabPanel = ({ value, className, children, ...props }: TabPanelProps) => {
       role="tabpanel"
       id={`tabpanel-${valueId}`}
       aria-labelledby={`tab-${valueId}`}
-      className={clsx(active || "hidden", "", className)}
+      className={clsx(
+        active || "hidden",
+        "transition-all motion-reduce:transition-none starting:opacity-0 duration-500 ease-out",
+        "starting:-translate-x-1/2",
+        className
+      )}
       {...props}
     >
       {children}

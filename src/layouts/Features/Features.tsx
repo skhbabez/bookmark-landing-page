@@ -45,11 +45,14 @@ const Features = ({
       <Tabs defaultValue="1">
         <TabList className="px-8 md:mx-auto mt-8 md:mt-18 md:max-w-152 xl:max-w-182.5">
           {tabContent.map(({ value, tab }) => (
-            <Tab value={value}>{tab}</Tab>
+            <Tab key={value} value={value}>
+              {tab}
+            </Tab>
           ))}
         </TabList>
         {tabContent.map(({ value, title, text, src }) => (
           <TabPanel
+            key={value}
             className="flex flex-col gap-8 md:gap-16 xl:flex-row xl:gap-30 items-center"
             value={value}
           >
