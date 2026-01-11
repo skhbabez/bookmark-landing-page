@@ -59,7 +59,7 @@ const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 
 #### Faq
 
-U built the faq section with details summary, to avoid using javascript. The only downside was, to replace the markers. usually I would do it with css and :after but this time I used icons from react-icons directly. This was effectively easier.
+I built the faq section with details summary, to avoid using javascript. The only downside was, to replace the markers. usually I would do it with css and :after but this time I used icons from react-icons directly. This was effectively easier.
 
 ```tsx
       <FaAngleUp size={18} className="hidden group-open:inline text-red-400" />
@@ -69,9 +69,33 @@ U built the faq section with details summary, to avoid using javascript. The onl
       />
 ```
 
+#### Tabs
+
+I tried building my own tab component according to WAI accessibility standards. I referenced BaseUI and other component libraries to get a general idea of how a good component would look. The most challenging aspect was making it keyboard controllable. I ended up accessing the DOM directly, since React does not make it easy to keep track of the order of the tab elements in my design.
+
+```tsx
+ const onKeyDown = (event: React.KeyboardEvent) => {
+    if (tabRef.current) {
+      const tabs: HTMLButtonElement[] = Array.from(
+        tabRef.current.querySelectorAll("[role=tab]")
+      );
+      const currentIdx = tabs.findIndex(
+        (tab) => document.activeElement === tab
+      );
+      const calcIndex = (offset: number) => {
+        return Math.max(Math.min(currentIdx + offset, tabs.length - 1), 0);
+      };
+
+      switch (event.key) {
+        case "ArrowLeft":
+          tabs[calcIndex(-1)].focus();
+          break;
+      ...
+
+```
+
 ### Continued development
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [WAI Tab Standard](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/) - I used this as a reference for the Tab Component.
