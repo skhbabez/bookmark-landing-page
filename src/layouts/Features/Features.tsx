@@ -43,7 +43,7 @@ const Features = ({
       </div>
 
       <Tabs defaultValue="1">
-        <TabList className="px-8 md:mx-auto mt-8 md:mt-18">
+        <TabList className="px-8 md:mx-auto mt-8 md:mt-18 md:max-w-152 xl:max-w-182.5">
           {tabContent.map(({ value, tab }) => (
             <Tab value={value}>{tab}</Tab>
           ))}
