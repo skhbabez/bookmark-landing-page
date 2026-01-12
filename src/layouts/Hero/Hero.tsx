@@ -1,16 +1,23 @@
 import clsx from "clsx";
 import type { ComponentPropsWithRef } from "react";
 import hero from "../../assets/illustration-hero.svg";
+import Button from "../../Components/Button/Button";
 
 const Hero = ({
   className,
   ...props
 }: Omit<ComponentPropsWithRef<"section">, "children">) => {
   return (
-    <section className={clsx("", className)} {...props}>
-      <div className="relative h-75 md:h-121.5">
+    <section
+      className={clsx(
+        "max-w-318.75 flex flex-col xl:flex-row items-center gap-12 md:gap-18 xl:gap-0",
+        className
+      )}
+      {...props}
+    >
+      <div className="relative w-full h-75 md:h-121.5 xl:order-2">
         <img
-          className="absolute left-1/2  -translate-x-1/2 xl:translate-x-0 bottom-0 top-[calc(40.9211px)]  md:-top-2.25 w-[353.2455px] md:w-164.25 xl:left-[25.59px]"
+          className="absolute left-1/2 -translate-x-1/2 xl:translate-x-0 bottom-0 top-[calc(2.5576rem)]  md:-top-2.25 w-[22.0778rem] md:w-164.25 xl:left-[1.599375rem]"
           src={hero}
           alt=""
         />
@@ -19,6 +26,19 @@ const Hero = ({
             "absolute bg-blue-600 right-0 rounded-l-full h-50.75 md:h-88 w-[81.07%] md:w-[67.06%] xl:w-full xl:left-[13.70625rem] -z-10 bottom-0"
           )}
         ></div>
+      </div>
+      <div className="max-w-135 max-md:mx-7.75 text-center xl:text-start space-y-6 xl:order-1">
+        <h1 className="text-1-mobile md:text-1 text-blue-950">
+          A Simple Bookmark Manager
+        </h1>
+        <p>
+          A clean and simple interface to organize your favourite websites. Open
+          a new browser tab and see your sites load instantly. Try it for free.
+        </p>
+        <div className="flex *:flex-1 gap-4 max-w-85.75 mx-auto xl:ms-0">
+          <Button>Get it on Chrome</Button>
+          <Button variant="secondary">Get it on Firefox</Button>
+        </div>
       </div>
     </section>
   );

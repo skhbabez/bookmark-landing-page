@@ -21,8 +21,8 @@ const Footer = ({
       {...props}
     >
       <div className="flex gap-3 items-center">
-        <img src={logo} />
-        <img src={bookmark} />
+        <img src={logo} alt="" />
+        <img src={bookmark} alt="" />
       </div>
       <ul className="flex flex-col md:flex-row items-center gap-6">
         {links.map((link) => (
@@ -34,10 +34,18 @@ const Footer = ({
         ))}
       </ul>
       <div className="flex gap-10 xl:ml-auto">
-        <NavLink href="https://www.facebook.com/" className="text-white">
+        <NavLink
+          aria-label="Open on Facebook"
+          href="https://www.facebook.com/"
+          className="text-white"
+        >
           <FaSquareFacebook size={24} />
         </NavLink>
-        <NavLink href="https://x.com/" className="text-white">
+        <NavLink
+          aria-label="Open on X"
+          href="https://x.com/"
+          className="text-white"
+        >
           <FaXTwitter size={24} />
         </NavLink>
       </div>

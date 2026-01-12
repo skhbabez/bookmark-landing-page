@@ -18,7 +18,7 @@ const Button = ({
         variant === "primary" &&
           "bg-blue-600 text-white border-blue-600 hover:text-blue-600 focus-visible:text-blue-600",
         variant === "secondary" &&
-          "bg-grey-50 text-blue-950 border-grey-50 hover:border-grey-600 focus-visible:border-grey-600 hover:text-grey-600 focus-visible:text-grey-600",
+          "bg-grey-50 text-blue-950 border-grey-50 hover:border-grey-600 focus-visible:border-grey-600 hover:text-grey-600/75 focus-visible:text-grey-600/75",
         variant === "submit" &&
           "bg-red-400 text-white border-red-400 hover:text-red-400 focus-visible:text-red-400"
       )}
