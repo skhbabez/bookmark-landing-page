@@ -193,7 +193,6 @@ const TabPanel = ({ value, className, children, ...props }: TabPanelProps) => {
     <div
       role="tabpanel"
       id={`tabpanel-${valueId}`}
-      tabIndex={0}
       aria-labelledby={`tab-${valueId}`}
       className={clsx(
         active || "hidden",

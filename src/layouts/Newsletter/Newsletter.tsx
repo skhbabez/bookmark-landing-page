@@ -54,7 +54,7 @@ const Newsletter = ({
         method="post"
       >
         <hgroup className="text-white text-center">
-          <p className="text-3-mobile-medium md:text-6-semibold uppercase">
+          <p className="text-3-mobile-medium md:text-6-semibold text-white uppercase">
             35,000+ already joined
           </p>
           <h2 className="text-1-mobile md:text-2 md:mt-6" id={formId}>
@@ -74,6 +74,7 @@ const Newsletter = ({
             <div className="relative">
               <input
                 value={email}
+                autoComplete="email"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className={clsx(

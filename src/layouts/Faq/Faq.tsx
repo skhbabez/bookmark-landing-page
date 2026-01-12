@@ -18,7 +18,7 @@ const Faq = ({
         <h2 className="text-1-mobile md:text-2 text-blue-950">
           Frequently Asked Questions
         </h2>
-        <p className="text-2-mobile-regular md:text-4 text-blue-950/50">
+        <p>
           Here are some of our FAQs. If you have any other questions you’d like
           answered please feel free to email us.
         </p>
