@@ -9,9 +9,11 @@
   --color-grey-600: #5b6074;
   --color-grey-50: #f7f7f7;
   --color-red-400: #fa5959;
-  --text-*: initial;
+
   --shadow-*: initial;
   --shadow-button: 0 8px 8px -4px rgb(73 93 207 / 20.01%);
+
+  --text-*: initial;
   --text-1: 3rem;
   --text-1--line-height: 1.1;
   --text-1--letter-spacing: normal;
@@ -61,6 +63,11 @@
   --text-7--line-height: 1.2;
   --text-7--letter-spacing: 0.015625rem;
   --text-7--font-weight: 500;
+
+  --text-7: 1.25rem;
+  --text-7--line-height: 1.0625rem;
+  --text-7--letter-spacing: 0.144375rem;
+  --text-7--font-weight: 400;
 
   --text-1-mobile: 1.875rem;
   --text-1-mobile--line-height: 1.35;
