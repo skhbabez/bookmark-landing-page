@@ -82,6 +82,7 @@ const Newsletter = ({
                   isError && "border-2 border-red-400 px-3.5 md:px-5.5 "
                 )}
                 id={emailId}
+                type="email"
                 placeholder="enter your email adress"
               />
               <FaCircleExclamation
