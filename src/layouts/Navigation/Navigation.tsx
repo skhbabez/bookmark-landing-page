@@ -34,6 +34,7 @@ const Navigation = ({
             ))}
           </ul>
           <Button
+            type="button"
             className="uppercase px-[2.15625rem] min-h-10!"
             variant="submit"
           >
@@ -43,11 +44,11 @@ const Navigation = ({
         <button
           onClick={() => setMenuOpen(true)}
           className="focus-visible:outline-red-400 xl:hidden"
+          aria-label="Open Navigation"
         >
           <FaBars
             className="text-blue-950 hover:text-red-400 transition-colors duration-200 delay-75 ease-in-out   "
             size={20}
-            aria-label="Open Navigation"
           />
         </button>
       </nav>

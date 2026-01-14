@@ -29,11 +29,11 @@ const NavMenu = ({ closeMenu, className, ...props }: NavMenuProps) => {
             onClick={closeMenu}
             autoFocus
             className=" focus-visible:outline-2 rounded-[0.3125rem] focus-visible:outline-red-400 xl:hidden"
+            aria-label="Close Navigation Menu"
           >
             <FaX
               className="text-white hover:text-red-400 transition-colors duration-200 delay-75 ease-in-out"
               size={15}
-              aria-label="Close Navigation Menu"
             />
           </button>
         </div>
@@ -54,7 +54,11 @@ const NavMenu = ({ closeMenu, className, ...props }: NavMenuProps) => {
           <Divider className="bg-white!" />
         </ul>
         <div className="mb-12 flex flex-col justify-between">
-          <Button variant="dialog" className="mt-6 md:mt-8 w-full uppercase ">
+          <Button
+            type="button"
+            variant="dialog"
+            className="mt-6 md:mt-8 w-full uppercase "
+          >
             login
           </Button>
         </div>

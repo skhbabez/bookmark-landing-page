@@ -38,8 +38,10 @@ const Hero = ({
           a new browser tab and see your sites load instantly. Try it for free.
         </p>
         <div className="flex *:flex-1 *:min-w-fit gap-4 max-w-85.75 mx-auto xl:ms-0 flex-wrap">
-          <Button>Get it on Chrome</Button>
-          <Button variant="secondary">Get it on Firefox</Button>
+          <Button type="button">Get it on Chrome</Button>
+          <Button type="button" variant="secondary">
+            Get it on Firefox
+          </Button>
         </div>
       </div>
     </section>

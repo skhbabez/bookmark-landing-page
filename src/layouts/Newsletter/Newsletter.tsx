@@ -102,7 +102,8 @@ const Newsletter = ({
           <Button
             className="max-md:w-full px-6 shrink-0"
             variant="submit"
-            type="button"
+            type="submit"
+            onClick={(event) => event.preventDefault()}
           >
             contact us
           </Button>
