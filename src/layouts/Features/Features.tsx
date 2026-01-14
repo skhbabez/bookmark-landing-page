@@ -35,8 +35,8 @@ const Features = ({
   ...props
 }: Omit<ComponentPropsWithRef<"section">, "children">) => {
   return (
-    <section className={clsx("text-center max-md:px-8", className)} {...props}>
-      <div className="max-w-135 space-y-4 mx-auto">
+    <section className={clsx("text-center", className)} {...props}>
+      <div className="max-w-135 space-y-4 mx-auto max-md:px-8 ">
         <h2 className="text-1-mobile md:text-2">Features</h2>
         <p>
           Our aim is to make it quick and easy for you to access your favourite
@@ -63,8 +63,11 @@ const Features = ({
             <div className="relative h-70.5 md:h-119.5 xl:h-126.75 w-full xl:w-[48.95%]">
               <div
                 className={clsx(
-                  "absolute bg-blue-600 rounded-r-full h-50.75 md:h-88 w-[82.13%] xl:w-full xl:right-16.25 -z-10 bottom-0",
-                  value === "1" ? "md:w-[83.72%]" : "md:w-[67.84%]"
+                  "absolute bg-blue-600 rounded-r-full h-50.75 md:h-88 w-full xl:right-16.25 -z-10 bottom-0",
+                  "right-[max(67px,calc(67px+(100vw-375px)/2))]",
+                  value === "1"
+                    ? "md:right-[max(128px,calc(128px+(100vw-768px)/2))]"
+                    : "md:right-[max(247px,calc(247px+(100vw-768px)/2))]"
                 )}
               ></div>
               <img
@@ -81,7 +84,7 @@ const Features = ({
                 alt=""
               />
             </div>
-            <div className="max-w-112.5 max-md:px-8 space-y-4 md:space-y-6 xl:text-start ">
+            <div className=" max-w-112.5 max-md:px-8 space-y-4 md:space-y-6 xl:text-start ">
               <h3 className="text-1-mobile md:text-2 max-md:px-14">{title}</h3>
               <p>{text}</p>
               <Button className="px-5.5" type="button">
