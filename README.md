@@ -121,6 +121,8 @@ useEffect(() => {
 
 ### Continued development
 
+Lots of refactoring mostly.
+
 ### Useful resources
 
 - [WAI Tab Standard](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/) - I used this as a reference for the Tab Component.
