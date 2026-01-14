@@ -23,7 +23,9 @@ const Hero = ({
         />
         <div
           className={clsx(
-            "absolute bg-blue-600 right-0 rounded-l-full h-50.75 md:h-88 w-[81.07%] md:w-[67.06%] xl:w-full xl:left-[13.70625rem] -z-10 bottom-0"
+            "absolute bg-blue-600 right-0 rounded-l-full h-50.75 md:h-88 xl:w-full xl:left-[13.70625rem] -z-10 bottom-0",
+            "left-[max(4.4375rem,calc(4.4375rem+(100vw-23.4375rem)/2))]",
+            "md:left-[max(15.8125rem,calc(15.8125rem+(100vw-48rem)/2))]"
           )}
         ></div>
       </div>
