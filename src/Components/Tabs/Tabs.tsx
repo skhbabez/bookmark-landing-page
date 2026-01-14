@@ -171,12 +171,12 @@ const Tab = ({ value, className, children, ...props }: TabProps) => {
       {...props}
     >
       {children}
-      <div
+      <span
         className={clsx(
-          "h-1 w-[52.41%] md:w-full absolute bg-red-400 bottom-0 left-0 right-0 mx-auto",
+          "block h-1 w-[52.41%] md:w-full absolute bg-red-400 bottom-0 left-0 right-0 mx-auto",
           active ? "block" : "hidden"
         )}
-      ></div>
+      ></span>
     </button>
   );
 };

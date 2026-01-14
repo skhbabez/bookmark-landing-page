@@ -42,6 +42,7 @@ const Navigation = ({
           </Button>
         </div>
         <button
+          type="button"
           onClick={() => setMenuOpen(true)}
           className="focus-visible:outline-red-400 xl:hidden"
           aria-label="Open Navigation"

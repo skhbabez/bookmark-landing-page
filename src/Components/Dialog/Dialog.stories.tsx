@@ -23,6 +23,7 @@ export const Default: Story = {
     return (
       <div>
         <button
+          type="button"
           className="mx-auto block border-black border-2"
           onClick={() => updateArgs({ isOpen: true })}
         >
@@ -30,6 +31,7 @@ export const Default: Story = {
         </button>
         <Dialog isOpen={isOpen}>
           <button
+            type="button"
             className="mx-auto block border-black border-2"
             onClick={() => updateArgs({ isOpen: false })}
           >
