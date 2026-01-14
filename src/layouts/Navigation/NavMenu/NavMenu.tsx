@@ -27,6 +27,7 @@ const NavMenu = ({ closeMenu, className, ...props }: NavMenuProps) => {
           </div>
           <button
             onClick={closeMenu}
+            autoFocus
             className=" focus-visible:outline-2 rounded-[0.3125rem] focus-visible:outline-red-400 xl:hidden"
           >
             <FaX
