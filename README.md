@@ -44,8 +44,9 @@ Users should be able to:
 
 #### Form
 
-I wanted to try out a validation library for a change. I used zod, i library i worked with in the past a little bit. This made the email validation quite trivial.
-Though, I realized, that I need to brush up on my form knowledge a little and will dive back into the web dev guide on it. I will also explore libraries like react hook form next.
+I wanted to try out a validation library for a change, so I used Zod, a library I have worked with a little in the past. This made the email validation quite trivial.
+
+However, I realized that I need to brush up on my form knowledge and will dive back into the web dev guide on it. I will also explore libraries like React Hook Form next.
 
 ```tsx
 const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -62,7 +63,7 @@ const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 
 #### Faq
 
-I built the faq section with details summary, to avoid using javascript. The only downside was, to replace the markers. usually I would do it with css and :after but this time I used icons from react-icons directly. This was effectively easier.
+I built the FAQ section with details and summary to avoid using JavaScript. The only downside was replacing the markers. Usually I would do this with CSS and :after, but this time I used icons from react-icons directly. This was effectively easier.
 
 ```tsx
       <FaAngleUp size={18} className="hidden group-open:inline text-red-400" />
@@ -74,7 +75,7 @@ I built the faq section with details summary, to avoid using javascript. The onl
 
 #### Tabs
 
-I tried building my own tab component according to WAI accessibility standards. I referenced BaseUI and other component libraries to get a general idea of how a good component would look. The most challenging aspect was making it keyboard controllable. I ended up accessing the DOM directly, since React does not make it easy to keep track of the order of the tab elements in my design.
+I tried building my own tab component according to WAI accessibility standards. I referenced BaseUI and other component libraries to get a general idea of what a good component should look like. The most challenging aspect was making it keyboard controllable. I ended up accessing the DOM directly, since React does not make it easy to keep track of the order of the tab elements in my design.
 
 ```tsx
  const onKeyDown = (event: React.KeyboardEvent) => {
