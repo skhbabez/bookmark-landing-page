@@ -43,7 +43,9 @@ const Downloads = ({
               />
               <hgroup className="space-y-2">
                 <h3 className="text-5-mobile md:text-3">Add to {browser}</h3>
-                <p>Minimum version {version}</p>
+                <p className="text-2-mobile-regular! md:text-6-regular!">
+                  Minimum version {version}
+                </p>
               </hgroup>
             </div>
             <img src={dots} alt="" />
