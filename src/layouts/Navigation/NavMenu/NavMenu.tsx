@@ -4,7 +4,6 @@ import clsx from "clsx";
 import bookmark from "../../../assets/bookmark.svg";
 import logo from "../../../assets/logo-white.svg";
 import { FaX } from "react-icons/fa6";
-import Divider from "../../../Components/Divider/Divider";
 import SocialLinks from "../../SocialLinks/SocialLinks";
 import Button from "../../../Components/Button/Button";
 
