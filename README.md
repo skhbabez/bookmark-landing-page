@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/skhbabez/bookmark-landing-page](https://github.com/skhbabez/bookmark-landing-page)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://skhbabez.github.io/bookmark-landing-page/](https://skhbabez.github.io/bookmark-landing-page/)
 
 ## My process
 
@@ -36,6 +36,9 @@ Users should be able to:
 
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
+- [Vite](https://vitejs.dev/) - Build tool
+- [Storybook](https://storybook.js.org/) - Component development
 
 ### What I learned
 

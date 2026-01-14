@@ -78,7 +78,7 @@ const Newsletter = ({
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className={clsx(
-                  "outline-none w-full h-12 px-4 md:px-6 bg-white text-blue-950/25 text-2-mobile-regular md:text-6-regular rounded-[0.3125rem] pe-14",
+                  "outline-none w-full h-12 px-4 md:px-6 bg-white text-blue-950/75 text-2-mobile-regular md:text-6-regular rounded-[0.3125rem] pe-14",
                   isError && "border-2 border-red-400 px-3.5 md:px-5.5 "
                 )}
                 id={emailId}
