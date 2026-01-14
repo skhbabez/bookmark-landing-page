@@ -37,11 +37,10 @@ const NavMenu = ({ closeMenu, className, ...props }: NavMenuProps) => {
             />
           </button>
         </div>
-        <ul className="flex flex-col gap-8 text-center mt-10">
+        <ul className="flex flex-col  text-center mt-10 border-t-white/15 border-t">
           {navLinks.map((text) => (
             <>
-              <Divider className="bg-white!" />
-              <li>
+              <li className="border-b-white/15 border-b py-8">
                 <NavLink
                   className="text-white text-8-regular!"
                   href={`/${text}`}
@@ -51,7 +50,6 @@ const NavMenu = ({ closeMenu, className, ...props }: NavMenuProps) => {
               </li>
             </>
           ))}
-          <Divider className="bg-white!" />
         </ul>
         <div className="mb-12 flex flex-col justify-between">
           <Button
