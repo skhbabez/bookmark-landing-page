@@ -2,9 +2,8 @@ import clsx from "clsx";
 import type { ComponentPropsWithRef } from "react";
 import bookmark from "../../assets/bookmark.svg";
 import logo from "../../assets/logo.svg";
-import { FaSquareFacebook } from "react-icons/fa6";
-import { FaXTwitter } from "react-icons/fa6";
 import NavLink from "../../Components/NavLink/NavLink";
+import SocialLinks from "../SocialLinks/SocialLinks";
 
 const links = ["features", "pricing", "contact"];
 
@@ -33,22 +32,7 @@ const Footer = ({
           </li>
         ))}
       </ul>
-      <div className="flex gap-10 xl:ml-auto">
-        <NavLink
-          aria-label="Open on Facebook"
-          href="https://www.facebook.com/"
-          className="text-white"
-        >
-          <FaSquareFacebook size={24} />
-        </NavLink>
-        <NavLink
-          aria-label="Open on X"
-          href="https://x.com/"
-          className="text-white"
-        >
-          <FaXTwitter size={24} />
-        </NavLink>
-      </div>
+      <SocialLinks className="max-xl:md:gap-6 xl:ml-auto" />
     </footer>
   );
 };

@@ -3,13 +3,15 @@ import Faq from "./layouts/Faq/Faq";
 import Features from "./layouts/Features/Features";
 import Footer from "./layouts/Footer/Footer";
 import Hero from "./layouts/Hero/Hero";
+import Navigation from "./layouts/Navigation/Navigation";
 import Newsletter from "./layouts/Newsletter/Newsletter";
 
 function App() {
   return (
     <>
       <main>
-        <div className="xl:ms-16">
+        <Navigation className="main-spacer max-w-276 mx-auto" />
+        <div className="xl:ms-16 mt:mt-[2.1875rem] xl:mt-28.5 md:mt-[5.03125rem]">
           <Hero className="xl:ms-auto" />
         </div>
         <Features className="mt-32 md:mt-31.5 xl:mt-20" />

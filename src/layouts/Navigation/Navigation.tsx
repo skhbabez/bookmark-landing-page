@@ -6,7 +6,7 @@ import NavLink from "../../Components/NavLink/NavLink";
 import { FaBars } from "react-icons/fa6";
 import Button from "../../Components/Button/Button";
 import Dialog from "../../Components/Dialog/Dialog";
-import NavMenu from "./NavMenu";
+import NavMenu from "./NavMenu/NavMenu";
 
 const navLinks = ["features", "pricing", "contact"];
 
@@ -51,7 +51,10 @@ const Navigation = ({
           />
         </button>
       </nav>
-      <Dialog className="backdrop:bg-blue-950/95" isOpen={menuOpen}>
+      <Dialog
+        className="xl:hidden main-spacer backdrop:bg-blue-950/95 bg-transparent h-screen pb-12 pt-10 w-screen max-h-none max-w-none"
+        isOpen={menuOpen}
+      >
         <NavMenu closeMenu={() => setMenuOpen(false)} />
       </Dialog>
     </>
