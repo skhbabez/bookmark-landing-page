@@ -35,7 +35,7 @@ const Hero = ({
           A clean and simple interface to organize your favourite websites. Open
           a new browser tab and see your sites load instantly. Try it for free.
         </p>
-        <div className="flex *:flex-1 gap-4 max-w-85.75 mx-auto xl:ms-0">
+        <div className="flex *:flex-1 *:min-w-fit gap-4 max-w-85.75 mx-auto xl:ms-0 flex-wrap">
           <Button>Get it on Chrome</Button>
           <Button variant="secondary">Get it on Firefox</Button>
         </div>
