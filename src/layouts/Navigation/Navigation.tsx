@@ -28,7 +28,7 @@ const Navigation = ({
         <div className="hidden xl:flex gap-12 items-center ms-auto">
           <ul className="contents">
             {navLinks.map((text) => (
-              <li>
+              <li key={text}>
                 <NavLink href={`/${text}`}>{text}</NavLink>
               </li>
             ))}
