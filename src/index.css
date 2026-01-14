@@ -130,13 +130,13 @@
   body {
     @apply font-display;
   }
-
-  p {
-    @apply text-2-mobile-regular md:text-4 text-blue-950/50;
-  }
 }
 
 @layer utilities {
+  .prose {
+    @apply text-2-mobile-regular md:text-4 text-blue-950/50;
+  }
+
   .main-spacer {
     @apply px-8 md:px-20 xl:px-0;
   }

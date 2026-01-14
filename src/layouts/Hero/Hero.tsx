@@ -33,7 +33,7 @@ const Hero = ({
         <h1 className="text-1-mobile md:text-1 text-blue-950">
           A Simple Bookmark Manager
         </h1>
-        <p>
+        <p className="prose">
           A clean and simple interface to organize your favourite websites. Open
           a new browser tab and see your sites load instantly. Try it for free.
         </p>

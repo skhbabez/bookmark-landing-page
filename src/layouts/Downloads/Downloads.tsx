@@ -25,7 +25,7 @@ const Downloads = ({
       <h2 className="text-1-mobile md:text-2 text-blue-950">
         Download the extension
       </h2>
-      <p className="max-w-135.25 mt-4">
+      <p className="max-w-135.25 mt-4 prose">
         We’ve got more browsers in the pipeline. Please do let us know if you’ve
         got a favourite you’d like us to prioritize.
       </p>
@@ -43,7 +43,7 @@ const Downloads = ({
               />
               <hgroup className="space-y-2">
                 <h3 className="text-5-mobile md:text-3">Add to {browser}</h3>
-                <p className="text-2-mobile-regular! md:text-6-regular!">
+                <p className="text-2-mobile-regular md:text-6-regular text-blue-950/50">
                   Minimum version {version}
                 </p>
               </hgroup>
