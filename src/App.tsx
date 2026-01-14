@@ -10,9 +10,11 @@ function App() {
   return (
     <>
       <main>
-        <Navigation className="main-spacer max-w-276 mx-auto" />
-        <div className="xl:ms-16 mt:mt-[2.1875rem] xl:mt-28.5 md:mt-[5.03125rem]">
-          <Hero className="xl:ms-auto" />
+        <div className="xl:ps-42.75 xl:pe-41.25">
+          <Navigation className="main-spacer max-w-276 mx-auto" />
+        </div>
+        <div className="xl:ms-41.25 mt-8.75 xl:mt-28.5 md:mt-[5.03125rem]">
+          <Hero className="xl:mx-auto" />
         </div>
         <Features className="mt-32 md:mt-31.5 xl:mt-20" />
         <Downloads className="mx-auto main-spacer mt-33.25 md:mt-[9.51rem] xl:mt-40.75" />

@@ -61,7 +61,7 @@ const Newsletter = ({
             Stay up-to-date with what we’re doing
           </h2>
         </hgroup>
-        <div className="flex flex-col md:flex-row  gap-4 mt-8">
+        <div className="flex flex-col items-start md:flex-row gap-4 mt-8">
           <div
             className={clsx(
               "w-full rounded-[0.3125rem]",
@@ -99,7 +99,11 @@ const Newsletter = ({
               {isError && "Whoops, make sure it’s an email"}
             </span>
           </div>
-          <Button className="px-6 shrink-0" variant="submit" type="button">
+          <Button
+            className="max-md:w-full px-6 shrink-0"
+            variant="submit"
+            type="button"
+          >
             contact us
           </Button>
         </div>

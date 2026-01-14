@@ -16,7 +16,7 @@ const Button = ({
         "min-h-12 shadow-button outline-none rounded-[0.3125rem] px-2 border-2 cursor-pointer transition-colors duration-200 delay-75 ease-in-out",
         className,
         variant === "dialog"
-          ? "text-white bg-transparent border-white rounded-[0.3125rem] hover:border-red-400 hover:text-red-400 focus-visible:border-red-400 focus-visible:text-red-400"
+          ? "text-8-medium text-white bg-transparent border-white rounded-[0.3125rem] hover:border-red-400 hover:text-red-400 focus-visible:border-red-400 focus-visible:text-red-400"
           : "text-2-mobile-medium md:text-6-medium hover:bg-white focus-visible:bg-white ",
         variant === "primary" &&
           "bg-blue-600 text-white border-blue-600 hover:text-blue-600 focus-visible:text-blue-600",

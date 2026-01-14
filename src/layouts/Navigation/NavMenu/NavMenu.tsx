@@ -42,7 +42,10 @@ const NavMenu = ({ closeMenu, className, ...props }: NavMenuProps) => {
             <>
               <Divider className="bg-white!" />
               <li>
-                <NavLink className="text-white text-7!" href={`/${text}`}>
+                <NavLink
+                  className="text-white text-8-regular!"
+                  href={`/${text}`}
+                >
                   {text}
                 </NavLink>
               </li>
