@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <main>
-        <div className="xl:ps-42.75 xl:pe-41.25">
+        <div className="xl:ps-42.75 xl:pe-41.25 mt-10 xl:mt-12">
           <Navigation className="main-spacer max-w-276 mx-auto" />
         </div>
         <div className="xl:ps-[max(10.3125rem,calc(10.3125rem+(100vw-90rem)/2))] xl:overflow-hidden">
