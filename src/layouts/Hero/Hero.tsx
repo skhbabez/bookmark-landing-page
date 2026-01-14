@@ -10,7 +10,7 @@ const Hero = ({
   return (
     <section
       className={clsx(
-        "max-w-318.75 flex flex-col xl:flex-row items-center gap-12 md:gap-18 xl:gap-0",
+        "flex flex-col xl:flex-row items-center gap-12 md:gap-18 xl:gap-0",
         className
       )}
       {...props}
